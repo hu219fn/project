@@ -69,7 +69,7 @@ def order_delete(request, id):
 
 @login_required
 def management(request):
-    if request.user.username == 'alaa':
+    if request.user.username == 'admin':
         return render(request,'management.html',{'items':Products.objects.all().order_by('-date')})
     else:
         return redirect('/')
@@ -83,7 +83,7 @@ class Product_add(CreateView):
 
 @login_required
 def product_order(request, id):
-    if request.user.username == 'alaa':
+    if request.user.username == 'admin':
         items = Order.objects.filter(number=id).order_by('-date')
         return render(request, 'product_order.html', {'items':items,'count':items.count()})
     else:
@@ -98,7 +98,7 @@ class Product_edit(UpdateView):
 
 @login_required
 def product_delete(request, id):
-    if request.user.username == 'alaa':
+    if request.user.username == 'admin':
         item = Products.objects.get(id=id)
         orders = Order.objects.filter(number=id)
         if request.method == 'POST':
@@ -141,13 +141,13 @@ def phone_bag(request):
     return render(request, 'categories/phone_bag.html', {'products':Products.objects.filter(category='Phone Bag').order_by('-date')})
 
 def users(request):
-    if request.user.username == 'alaa':
+    if request.user.username == 'admin':
         return render(request, 'users.html', {'users':User.objects.all()})
     else:
         return redirect('/')
     
 def users_delete(request, id):
-    if request.user.username == 'alaa':
+    if request.user.username == 'admin':
         item = User.objects.filter(id=id)
         if request.method == 'POST':
             item.delete()
@@ -157,7 +157,7 @@ def users_delete(request, id):
         return redirect('/')
     
 def user(request, id):
-    if request.user.username == 'alaa':
+    if request.user.username == 'admin':
         item = User.objects.get(id=id)
         orders = Order.objects.filter(user=item)
         return render(request, 'user.html', {'item':item,'orders':orders})
