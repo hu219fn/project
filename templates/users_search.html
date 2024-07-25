@@ -4,13 +4,11 @@
 
 {% block body %}
 
-{% if request.user.username == 'admin' %}
+{% if request.user.username == 'alaa' %}
 <div class='management'>
     <div class='manageHrader users0'>
         <h1 id='en'>Users</h1>
         <button id='en1' class='allUsers'><a href='/management/users/'>All Users</a></button>
-        <h1 id='ar'>المستخدمين</h1>
-        <button id='ar1' class='allUsers'><a href='/management/users/'>كل المستخدمين</a></button>
     </div>
     <div class='items'>
         {% for user in users %}

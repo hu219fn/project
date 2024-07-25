@@ -1,0 +1,12 @@
+{% extends "ar/base.html" %}
+
+{% block title %}Delete{% endblock title %}
+
+{% block body %}
+<form method="post">
+    <h2>هل أنت متأكد أنك تريد حذف؟</h2>
+    {% csrf_token %}
+    <button style='border:none;background-color:transparent;'><a class='back' href='/ar/management/'>تراجع</a></button>
+    <input type="submit" value="حذف">
+</form>
+{% endblock body %}

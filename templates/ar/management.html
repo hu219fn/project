@@ -1,0 +1,32 @@
+{% extends "ar/base.html" %}
+
+{% block title %}Management of Website{% endblock title %}
+
+{% block body %}
+
+<div class='management'>
+    <div class='manageHrader'>
+        <h1>ادارة الموقع</h1>
+        <button><a href='/ar/management/product-add/'>اضافة منتج</a></button>
+    </div>
+    <div class='items'>
+        {% for item in items %}
+        <div class='item'>
+            <a href='/ar/{{item.id}}/'>
+                <img src='{{item.photo.url}}'>
+                <div>
+                    <h2>{{ item.title }}</h2>
+                    <p>{{ item.date }}</p>
+                </div>
+            </a>
+            <ul style='direction:ltr;'>
+                <li><a href='/ar/management/product-orders/{{item.id}}/'>الطلبات</a></li>    
+                <li><a href='/ar/management/product-edit/{{item.id}}/'>تعديل</a></li>
+                <li><a href='/ar/management/product-delete/{{item.id}}/'>حذف</a></li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}

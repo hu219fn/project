@@ -1,0 +1,32 @@
+{% extends "ar/base.html" %}
+
+{% block title %}Orders{% endblock title %}
+
+{% block body %}
+
+<div class='orders'>
+    <h1>السلة ({{count}})</h1>
+    <div class='order-div'>
+        <div>
+            {% for order in orders %}
+            <div class='order'>
+                <div style='display:flex; align-items:center;'>
+                    <img src='{{order.photo.url}}'>
+                    <a href='/ar/{{order.number}}/' style='margin:0 10px;'>
+                        <h1>{{order.title}}</h1>
+                        <p style='color:red;font-weight:bold;'><b class='b'>{{order.price}} </b>IRQ</p>
+                    </a>
+                </div>
+                <a class='deleteBTN' id='deleteBTN' href='/ar/order-delete/{{order.id}}/'><span class='material-symbols-outlined'>delete</span></a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class='content'>
+            <h3>الاجمالي:</h3>
+            <h1 id='total'></h1>
+            <button><a href='https://www.instagram.com/direct/t/17846555652189650' target='_blank'>اذهب الى الانستكرام للشراء</a></button>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

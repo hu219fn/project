@@ -1,0 +1,35 @@
+{% extends "ar/base.html" %}
+
+{% block title %}orders{% endblock title %}
+
+{% block body %}
+
+{% if count > 0%}
+<div class='management'>
+    <div class='manageHrader'>
+        <h1 id='mhh1'></h1>
+    </div>
+    <div class='items'>
+        {% for item in items %}
+        <div class='item'>
+            <a href='/{{item.number}}/'>
+                <img src='{{item.photo.url}}'>
+                <div>
+                    <h2 id='title' style='display:none;'>{{ item.title }}</h2>
+                    <h2>{{ item.user }} - ({{ item.count }})</h2>
+                    <p>{{ item.date }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class='management'>
+    <div class='manageHrader'>
+        <h1>لا احد</h1>
+    </div>
+</div>
+{% endif %}
+
+{% endblock body %}

@@ -24,9 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--4vb@f#_pgv^11l&%eax*jt1!iwus4^=ckev+h8&d!56m*ayx&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['alaa24.pythonanywhere.com']
+ALLOWED_HOSTS = ['https://handygleam.pythonanywhere.com/','*']
+
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'app',
+    'ar'
 ]
 
 MIDDLEWARE = [

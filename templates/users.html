@@ -4,15 +4,13 @@
 
 {% block body %}
 
-{% if request.user.username == 'admin' %}
+{% if request.user.username == 'alaa' %}
 <div class='management'>
     <div class='manageHrader users0'>
-        <h1 id='en'>Users</h1>
-        <h1 id='ar'>المستخدمين</h1>
+        <h1>Users</h1>
         <div style='display:flex;align-items:center;'>
             <form action="{% url 'search-user' %}" method="get">
-                <input id='en1' type="text" name="search-user" placeholder="Search for Users">
-                <input id='ar1' type="text" name="search-user0" placeholder="ابحث عن المستخدمين">
+                <input type="text" name="search-user" placeholder="Search for Users">
                 <button type="submit"><span class='material-symbols-outlined'>search</span></button>
             </form>
         </div>
@@ -34,10 +32,8 @@
 {% else %}
 <div class='management'>
     <div class='manageHrader'>
-        <h1 class='h1' id='en1'>you are not allowed to access this page</h1>
-        <h1 class='h1' id='ar1'>لا يسمح لك بالوصول إلى هذه الصفحة</h1>
-        <a href="{% url 'index' %}" id='en' style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>Home</a>
-        <a href="{% url 'index' %}" id='ar' style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>الصفحة الرئيسية</a>
+        <h1 class='h1'>you are not allowed to access this page</h1>
+        <a href="{% url 'index' %}" style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>Home</a>
     </div>
 </div>
 {% endif %}

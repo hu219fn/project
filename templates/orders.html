@@ -5,8 +5,7 @@
 {% block body %}
 
 <div class='orders'>
-    <h1 id='h1-order1'>Orders ({{count}})</h1>
-    <h1 id='h1-order2'>السلة ({{count}})</h1>
+    <h1>Orders ({{count}})</h1>
     <div class='order-div'>
         <div>
             {% for order in orders %}
@@ -23,11 +22,9 @@
             {% endfor %}
         </div>
         <div class='content'>
-            <h3 id='total-en'>Total:</h3>
-            <h3 id='total-ar'>الاجمالي:</h3>
+            <h3>Total:</h3>
             <h1 id='total'></h1>
-            <button><a href='https://www.instagram.com/direct/t/17846555652189650' target='_blank' id='redirect-to-insta-en'>Go To Insta for Buy</a></button>
-            <button><a href='https://www.instagram.com/direct/t/17846555652189650' target='_blank' id='redirect-to-insta-ar'>اذهب الى الانستكرام للشراء</a></button>
+            <button><a href='https://www.instagram.com/direct/t/17846555652189650' target='_blank'>Go To Insta for Buy</a></button>
         </div>
     </div>
 </div>

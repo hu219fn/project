@@ -1,0 +1,25 @@
+{% extends "ar/base.html" %}
+
+{% block title %}Handy Gleam{% endblock title %}
+
+{% block body %}
+
+<div class='container'>
+{% for product in products%}
+<section>
+    <a href='/ar/{{product.id}}'>
+        <img src="{{product.photo.url}}">
+        <h2>{{product.title}}</h2>
+        {% if product.caption %}
+            <p>{{product.caption}}</p>
+        {% endif %}
+        <h3>{{product.price}} IQD</h3>
+    </a>
+    {% if product.sell %}
+    <p class='sell'>-{{product.sell}}%</p>
+    {% endif %}
+</section>
+{% endfor %}
+</div>
+
+{% endblock body %}

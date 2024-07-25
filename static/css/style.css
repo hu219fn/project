@@ -1,6 +1,6 @@
 * {margin: 0;padding: 0;font-family: Tahoma, Verdana, sans-serif;}
 form {
-    margin: 2% 10%;
+    padding: 2% 10%;
 }
 form h1 {
     margin: 20px 0;
@@ -66,6 +66,7 @@ body {
 }
 main {
     min-height: 80%;
+    background-color:#B7DCCC;
 }
 a {
     color: black;
@@ -78,11 +79,12 @@ ul {
     list-style: none;
 }
 nav {
-    background-color: #fff;
+    background-color: #172f24;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 5;
     position: sticky;
     top: 0;
+    color:#fff;
 }
 nav ul {
     display: flex;
@@ -99,6 +101,7 @@ nav ul div li a {
     align-items: center;
     margin: 0 10px;
     font-size: 17px;
+color: #fff;
 }
 nav ul div li button {
     display: flex;
@@ -108,6 +111,7 @@ nav ul div li button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+color: #fff;
 }
 nav ul div li h3 {
     display: flex;
@@ -118,6 +122,26 @@ nav ul div li h3 {
 nav ul div li img {
     width: 40px;
     border-radius: 50%;
+}
+@media (max-width:1250px){
+li#menu span.material-symbols-outlined,
+li#menu1 span.material-symbols-outlined {
+    font-size: 50px !important;
+    margin: 0 10px;
+}
+nav ul div li a span.material-symbols-outlined {
+    font-size:50px !important;
+}
+nav ul div li h3 {
+    font-size: 35px;
+}
+nav ul div li img {
+    width: 70px;
+    border-radius: 50%;
+}
+nav ul div li form input{
+    font-size: 25px;
+}
 }
 #ul-sections {
     position: absolute;
@@ -169,16 +193,17 @@ nav ul div li form input {
     padding: 10px;
     outline: none;
     margin: 0;
+    color:#fff;
     font-size: 15px;
 }
 nav ul div li form button {
     padding: 5px;
     margin: 0;
-    border-radius: 0 10px 10px 0;
-
+    border-radius:10px;
+    color:#fff;
 }
 nav ul div li form button:hover {
-    background-color: #f1f1f1
+    background-color: #ffffff50
 }
 nav ul div li a span.material-symbols-outlined, #lang1, #lang {
     padding: 10px;
@@ -201,7 +226,7 @@ nav ul div li a:hover {
     font-size: 27px!important;
 }
 #menu:hover {
-    background-color: #f1f1f1;
+    background-color: #ffffff50;
 }
 
 #menu1 {
@@ -213,22 +238,21 @@ nav ul div li a:hover {
     font-size: 27px!important;
 }
 #menu1:hover {
-    background-color: #f1f1f1;
+    background-color: #ffffff50;
 }
 
-@media (max-width:850px) {
+@media (max-width:1250px) {
     #li-display {
         display: none;
     }
-    #menu {
+    #menu , #menu1 {
         border-radius: 50%;
         padding: 10px;
         display: block;
+	font-size: 40px
     }
-    #menu1 {
-        border-radius: 50%;
-        padding: 10px;
-        display: block;
+    #menu span , #menu1 span{
+        font-size: 40px
     }
     .btns {
         display: none!important;
@@ -288,7 +312,10 @@ nav ul div li a:hover {
     background-color: transparent;
     border: none;
     font-size: 16px;
-    color:#03a9f4;
+    color:#03a9f4
+}
+#li-display button {
+    color:#fff;
 }
 #ul-display1 hr {
     border: .5px solid #aaa;
@@ -312,13 +339,13 @@ nav ul div li a:hover {
     padding: 10px 0;
 }
 footer {
-    background-color:#AFD9CC;
-    color: white;
+    background-color:#172f24;
+    color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr ;
     padding: 30px 10%;
     gap: 30px;
-    width: 80%;
+    width: auto;
 }
 footer div div {
     display: flex;
@@ -354,7 +381,15 @@ footer p {
 #lang1:hover, #lang:hover {
     text-decoration: underline;
 }
-@media (max-width:700px) {
+@media (max-width:1250px) {
+
+footer div div img {
+    height: 70px;
+}
+footer div h3 {
+    line-height: 30px;
+    font-size: 45px
+}
     footer {
         text-align: center!important;
         grid-template-columns: 1fr;
@@ -368,6 +403,10 @@ footer p {
     }
     footer div a {
         display: block!important;
+	font-size:30px;
+    }
+    footer p {
+	font-size:30px;
     }
     nav ul {
         padding: 15px 2.5%;
@@ -387,8 +426,8 @@ footer p {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 35px;
-    margin: 7% 10%;
-    margin-bottom: 100px;
+    padding:7% 10%;
+    margin:0;
     grid-template-rows: 1fr;
 }
 .container section {
@@ -398,8 +437,9 @@ footer p {
     display: block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    padding: 20px 0 0 0;
-    background-color: #fff;
+    padding: 20px 0 ;
+    height: fit-content;
+    background-color: #172f24;
     border-radius: 5px;
 }
 .container section a {
@@ -409,7 +449,6 @@ footer p {
     text-decoration: none;
 }
 .container section a img {
-    height: 70%;
     width: 80%;
     margin: 0 10% 10px 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
@@ -417,24 +456,24 @@ footer p {
 .container section a p {
     font-size: 16px;
     margin: 5px 0 ;
-    color: #555;
+    color: #fff;
 }
 .container section a h2 {
     font-size: 25px;
     font-weight: 700;
+    color:#fff;
 }
 .container section a h3 {
     font-size: 23px;
-    color: red;
-    text-shadow: 0px 0px 2px red;
+color: #fff;
+    text-shadow: 0px 0px 2px #fff;
 }
-@media (max-width:850px) {
+@media (max-width:1250px) {
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 30px;
-        margin: 5% 10%;
-        margin-bottom: 100px;
+        padding: 5% 10%;
     }
     .container section {
         margin-top: 20px;
@@ -457,13 +496,12 @@ footer p {
 .container section:hover {
     rotate: 1deg;
 }
-@media (max-width:600px) {
+@media (max-width:800px) {
     .container {
         display: grid;
         grid-template-columns: 1fr;
         gap: 0;
-        margin: 5% 5%;
-        margin-bottom: 100px;
+        padding: 5% 5%;
     }
     .container section a{
         margin: 40px 0;
@@ -477,8 +515,8 @@ footer p {
     text-decoration: underline;
 }
 .detail {
-    background-color: #fff;
-    margin: 5% 10%;
+    background-color: #172f24;
+    margin:0 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
     padding: 20px;
@@ -495,28 +533,33 @@ footer p {
 }
 .detail .div2 h1 {
     font-size: 200%;
-    color: #000;
+    color: #fff;
     text-shadow: 0px 0px 1px black;
     letter-spacing: 1px;
 }
 .detail .div2 p {
     font-size: 16px;
     margin: 10px 0;
-    color: #555;
+    color: #fff;
 }
 .detail .div2 .price {
     margin-top: 10px;
     display: flex;
+color:#fff;
     align-items: center;
 }
 .detail .div2 .price h3 {
     font-size: 23px;
-    color: red;
+    color: #dcbab7;
 }
 .detail .div2 .price strong {
     font-size: 17px;
     color: #9E9E9E;
     font-weight: 400;
+}
+.detail .div2 form {
+    padding:0;
+    color:#fff
 }
 .detail .div2 form input[type='submit'] {
     width: 100%;
@@ -526,19 +569,19 @@ footer p {
     padding: 0 10px;
     margin: 20px 0 0 0;
     color: #fff;
-    background-color: #AFD9CC;;
+    background-color: #B7DCCC;
     font-size: 17px;
     cursor: pointer;
 }
 .detail .div2 form input[type='submit']:hover {
     text-decoration: underline;
 }
-@media (max-width:700px){
+@media (max-width:1250px){
     .detail {
         grid-template-columns: 100%;
     }
     .detail .div2 {
-        margin: 3%;
+        padding: 3%;
     }
     .detail .div1 img {
         width: 100%;
@@ -556,6 +599,7 @@ footer p {
     outline: none;
     background-color: transparent;
     padding: 5px;
+    color:#fff;
 }
 .detail .div2 form .count button:hover{
     cursor: pointer;
@@ -564,6 +608,7 @@ footer p {
 }
 .detail .div2 form .count input[type='number'] {
     width: 50px;
+color:#fff;
     text-align: center;
     font-size: 17px;
     padding: 0;
@@ -579,7 +624,7 @@ footer p {
     margin: 10px 0 0 0;
 }
 .orders {
-    margin: 2% 10%;
+    padding: 2% 10%;
 }
 .orders h1 {
     margin: 10px 0;
@@ -596,16 +641,17 @@ footer p {
     margin: 20px 0;
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: #172f24;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-    color: #000;
+    color: #fff;
     justify-content: space-between;
 }
 .orders .order h1 {
-    font-size: 22px;
+    font-size: 25px;
     margin: 0 0 5px 0;
     text-shadow: 0px 0px 1px #000;
     letter-spacing: 1px;
+    color:#fff;
 }
 .orders .order img {
     height: 50px;
@@ -622,20 +668,21 @@ footer p {
     padding: 5px;
 }
 .orders .order button:hover {
-    background-color: #f1f1f1;
+    background-color: #ffffff50;
 }
 .order-div .content {
     border-radius: 5px;
     padding: 10px;
-    background-color: #fff;
+    background-color: #172f24;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     height: fit-content;
 }
 .order-div .content h3 {
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 400;
     margin: 15px 0;
+    color: #fff;
 }
 .order-div .content button {
     border: none;
@@ -649,18 +696,18 @@ footer p {
     border-radius: 5px;
     margin: 15px 0;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 30px;
 }
 .order-div .content h1#total {
-    color: red;
-    font-size: 35px;
+    color: #dcbab7;
+    font-size: 50px;
     font-weight: bolder;
     text-shadow: 0px 0px 2px red;
     margin: 10px 0 10px 0;
 }
-@media (max-width: 850px) {
+@media (max-width:1500px) {
     .orders {
-        margin: 2% 10%;
+        padding: 2% 10%;
     }
     .order-div {
         display: grid;
@@ -668,7 +715,7 @@ footer p {
     }
 }@media (max-width: 600px) {
     .orders {
-        margin: 2% 5%;
+        padding: 2% 5%;
     }
 }
 .deleteBTN {
@@ -689,12 +736,12 @@ footer p {
 }
 .h1 {
     text-align: center;
-    margin: 20px 0 10px 0;
+    padding: 20px 0 10px 0;
     text-shadow: 0px 0px 1px #000;
     letter-spacing: 1px;
 }
 .management {
-    margin: 2% 10%;
+    padding: 2% 10%;
 }
 .management .manageHrader {
     display: flex;
@@ -751,7 +798,7 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: #172f24;
     border: 1px solid #555;
     padding: 10px 15px;
     margin-bottom: 10px;
@@ -792,7 +839,7 @@ footer p {
 }
 @media (max-width:850px) {
     .management {
-        margin: 2% 10%;
+        padding: 2% 10%;
     }
     .management .manageHrader {
         display: block;
@@ -880,4 +927,7 @@ form .back:hover {
 }
 .management .manageHrader div form button:hover {
     background-color: #f1f1f1
+}
+a.next:hover, a.prev:hover {
+    text-decoration: none;
 }

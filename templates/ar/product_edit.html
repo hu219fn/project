@@ -1,0 +1,20 @@
+{% extends "ar/base.html" %}
+
+{% block title %}Edit Product{% endblock title %}
+
+{% block body %}
+
+{% if request.user.username == 'alaa' %}
+<form method='post' enctype="multipart/form-data">
+    <h1>تعديل المنتج</h1>
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="حفظ" id='ar1'>
+</form>
+{% else %}
+
+<h1 class='h1'>لا يسمح لك بالوصول إلى هذه الصفحة</h1>
+<a href="{% url 'index0' %}" id='ar' style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>الصفحة الرئيسية</a>
+{% endif %}
+
+{% endblock body %}

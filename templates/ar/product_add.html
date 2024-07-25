@@ -1,0 +1,27 @@
+{% extends "ar/base.html" %}
+
+{% block title %}Add Products{% endblock title %}
+
+{% block body %}
+
+{% if request.user.username == 'alaa' %}
+<form method='post' enctype="multipart/form-data">
+    <h1 id='ar'>اضافة المنتج</h1>
+    {% csrf_token %}
+    {% for input in form %}
+    {% if input.label == 'Caption' or input.label == 'Sell' %}
+    <label>{{input.label}}:</label>
+    {% else %}
+    <label>{{input.label}}<span style='color:red;font-weight:bold'> *</span>:</label>
+    {% endif %}
+    {{input}}
+    {% endfor %}
+    <input id='en1' type='submit' value='Save'>
+    <input id='ar1' type='submit' value='حفظ'>
+</form>
+{% else %}
+<h1 class='h1'>you are not allowed to access this page</h1>
+<a href="{% url 'index' %}" style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>Home</a>
+{% endif %}
+
+{% endblock body %}

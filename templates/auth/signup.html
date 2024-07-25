@@ -4,20 +4,12 @@
 
 {% block body %}
 
-<form method='post' id='en'>
+<form method='post'>
     <h1>Register Form</h1>
     {% csrf_token %}
     {{form}}
     <input type='submit' value='Register'>
     <p class='phaR'>Have account? <a href="{% url 'login' %}">Login</a></p>
-</form>
-
-<form method='post' id='ar'>
-    <h1>انشاء حساب</h1>
-    {% csrf_token %}
-    {{form}}
-    <input type='submit' value='حفظ'>
-    <p class='phaR'>تملك حساب؟ <a href="{% url 'login' %}">تسجيل الدخول</a></p>
 </form>
 
 {% endblock body %}

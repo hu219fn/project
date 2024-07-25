@@ -4,11 +4,10 @@
 
 {% block body %}
 
-{% if request.user.username == 'admin' %}
+{% if request.user.username == 'alaa' %}
 <div class='management'>
     <div class='manageHrader'>
-        <h1 id='en'>Orders of "{{item.username}}"</h1>
-        <h1 id='ar'>طلبات "{{item.username}}"</h1>
+        <h1>Orders of "{{item.username}}"</h1>
     </div>
     <div class='items'>
         {% for order in orders %}
@@ -28,10 +27,8 @@
 {% else %}
 <div class='management'>
     <div class='manageHrader'>
-        <h1 class='h1' id='en1'>you are not allowed to access this page</h1>
-        <h1 class='h1' id='ar1'>لا يسمح لك بالوصول إلى هذه الصفحة</h1>
-        <a href="{% url 'index' %}" id='en' style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>Home</a>
-        <a href="{% url 'index' %}" id='ar' style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>الصفحة الرئيسية</a>
+        <h1 class='h1'>you are not allowed to access this page</h1>
+        <a href="{% url 'index' %}" style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>Home</a>
     </div>
 </div>
 {% endif %}

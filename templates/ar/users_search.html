@@ -1,0 +1,36 @@
+{% extends "ar/base.html" %}
+
+{% block title %}Management - Search Users{% endblock title %}
+
+{% block body %}
+
+{% if request.user.username == 'alaa' %}
+<div class='management'>
+    <div class='manageHrader users0'>
+        <h1>المستخدمين</h1>
+        <button class='allUsers'><a href='/ar/management/users/'>كل المستخدمين</a></button>
+    </div>
+    <div class='items'>
+        {% for user in users %}
+        <div class='item itemUsers'>
+            <a href='/ar/management/users/{{user.id}}/'>
+                <div>
+                    <h2>{{user.username}}</h2>
+                    <p>{{user.email}}</p>
+                </div>
+            </a>
+            <a href='/ar/management/users/delete/{{user.id}}/' id='deleteUser'><span class="material-symbols-outlined">delete</span></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class='management'>
+    <div class='manageHrader'>
+        <h1 class='h1'>لا يسمح لك بالوصول إلى هذه الصفحة</h1>
+        <a href="{% url 'index' %}" style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>الصفحة الرئيسية</a>
+    </div>
+</div>
+{% endif %}
+
+{% endblock body %}

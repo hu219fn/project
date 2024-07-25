@@ -1,0 +1,42 @@
+{% extends "ar/base.html" %}
+{% load humanize %}
+{% block title %}Handy Gleam{% endblock title %}
+
+{% block body %}
+
+<div class='detail'>
+    <div class='div1'>
+        <img src="{{item.photo.url}}">
+    </div>
+    <div class='div2'>
+        <h1>{{item.title}}</h1>
+        {% if item.caption %}
+            <p>{{item.caption}}</p>
+        {% endif %}
+        <div class='price'>
+            <b>السعر:&nbsp;</b>
+            <h3>{{item.price|intcomma|cut:'.0'}} IQD</h3>
+            {% if item.sell %}
+            <strong>&nbsp;-{{item.sell}}%</strong>
+            {% endif %}
+        </div>
+        <form method='POST' style='margin:0;'>
+            {% csrf_token %}
+            <div class='count0'>
+                <b>العدد:&nbsp;</b>
+                <div class='count'>
+                    <button type='button'><span id='minus' class="material-symbols-outlined">remove</span></button>
+                    <input type='number' name='count' id='count' value='1'>
+                    <button type='button'><span id='plus' class="material-symbols-outlined">add</span></button>
+                </div>
+            </div>
+	    {% if request.user.is_authenticated %}
+            <input type='submit' value='اضافة الى السلة'>
+	    {% else %}
+            <a style='display: block;margin: 20px 0 0 0;font-size:18px;color:#AFD9CC;' href='/ar/register/login/'>سجل الدخول لتتمكن من اضافة المنتج الى السلة</a>
+	    {% endif %}
+        </form>
+    </div>
+</div>
+
+{% endblock body %}

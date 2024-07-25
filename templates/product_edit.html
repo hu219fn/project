@@ -4,20 +4,16 @@
 
 {% block body %}
 
-{% if request.user.username == 'admin' %}
+{% if request.user.username == 'alaa' %}
 <form method='post' enctype="multipart/form-data">
-    <h1 id='en'>Edit Product</h1>
-    <h1 id='ar'>تعديل المنتج</h1>
+    <h1>Edit Product</h1>
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Done" id='en1'>
-    <input type="submit" value="حفظ" id='ar1'>
+    <input type="submit" value="Done">
 </form>
 {% else %}
-<h1 class='h1' id='en1'>you are not allowed to access this page</h1>
-<h1 class='h1' id='ar1'>لا يسمح لك بالوصول إلى هذه الصفحة</h1>
-<a href="{% url 'index' %}" id='en' style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>Home</a>
-<a href="{% url 'index' %}" id='ar' style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>الصفحة الرئيسية</a>
+<h1 class='h1'>you are not allowed to access this page</h1>
+<a href="{% url 'index' %}" style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>Home</a>
 {% endif %}
 
 {% endblock body %}

@@ -3,16 +3,10 @@
 {% block title %}Delete{% endblock title %}
 
 {% block body %}
-<form method="post" id='en'>
+<form method="post">
     <h2>Are you sure you want to delete?</h2>
     {% csrf_token %}
     <button style='border:none;background-color:transparent;'><a class='back' href='/management/'>Back</a></button>
     <input type="submit" value="Delete">
-</form>
-<form method="post" id='ar'>
-    <h2>هل أنت متأكد أنك تريد حذف؟</h2>
-    {% csrf_token %}
-    <button style='border:none;background-color:transparent;'><a class='back' href='/management/'>تراجع</a></button>
-    <input type="submit" value="حذف">
 </form>
 {% endblock body %}

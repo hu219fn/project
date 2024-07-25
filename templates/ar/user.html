@@ -1,0 +1,36 @@
+{% extends "ar/base.html" %}
+
+{% block title %}{% endblock title %}
+
+{% block body %}
+
+{% if request.user.username == 'alaa' %}
+<div class='management'>
+    <div class='manageHrader'>
+        <h1>طلبات "{{item.username}}"</h1>
+    </div>
+    <div class='items'>
+        {% for order in orders %}
+        <div class='item itemUsers'>
+            <a href='/{{order.number}}/'>
+                <img src='{{order.photo.url}}'>
+                <div>
+                    <h2>{{order.title}}</h2>
+                    <p>{{order.price}} - ({{order.count}})</p>
+                    <p>{{order.date}}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class='management'>
+    <div class='manageHrader'>
+        <h1 class='h1'>لا يسمح لك بالوصول إلى هذه الصفحة</h1>
+        <a href="{% url 'index0' %}" style='text-align:center;display:block;color:#03a9f4;font-size:17px;'>الصفحة الرئيسية</a>
+    </div>
+</div>
+{% endif %}
+
+{% endblock body %}
